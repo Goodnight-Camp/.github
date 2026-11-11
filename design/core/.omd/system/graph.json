@@ -1,0 +1,606 @@
+{
+  "$schema": "https://oh-my-design.kr/schema/design-system-graph-v2.schema.json",
+  "components_states": {
+    "components": [
+      {
+        "anatomy": [
+          "면 (accent)",
+          "라벨",
+          "선택적 앞 아이콘"
+        ],
+        "id": "button-primary",
+        "interaction": {
+          "kind": "interactive",
+          "state_applicability": {
+            "default": {
+              "applicability": "applicable"
+            },
+            "disabled": {
+              "applicability": "applicable"
+            },
+            "error": {
+              "applicability": "not-applicable",
+              "reason": "버튼 자체는 오류 상태를 갖지 않고 결과는 토스트·카드로 알림"
+            },
+            "focus-visible": {
+              "applicability": "not-applicable",
+              "reason": "앱 매니페스트에서 로터리(CCP) 미지원을 선언함"
+            },
+            "hover": {
+              "applicability": "not-applicable",
+              "reason": "차량 터치 화면에는 포인터 호버가 없음"
+            },
+            "loading": {
+              "applicability": "applicable"
+            },
+            "success": {
+              "applicability": "not-applicable",
+              "reason": "성공 결과는 화면 전환으로 표현"
+            }
+          }
+        },
+        "semantics": "화면당 하나뿐인 주 동작 (밤 계획 만들기, 이대로 잘게요, 일어날게요, 집으로 안내)",
+        "states": [
+          "default",
+          "pressed",
+          "disabled"
+        ],
+        "token_refs": [
+          "color.night.accent",
+          "color.night.accent-pressed",
+          "color.night.on-accent",
+          "color.morning.accent",
+          "color.morning.accent-pressed",
+          "radius.button",
+          "size.touch-min"
+        ],
+        "variants": [
+          "night: 시안 면 + 짙은 네이비 글자",
+          "morning: 현대 네이비 면 + 흰 글자"
+        ]
+      },
+      {
+        "anatomy": [
+          "반투명 면",
+          "라벨"
+        ],
+        "id": "button-basic",
+        "interaction": {
+          "kind": "interactive",
+          "state_applicability": {
+            "default": {
+              "applicability": "applicable"
+            },
+            "disabled": {
+              "applicability": "applicable"
+            },
+            "error": {
+              "applicability": "not-applicable",
+              "reason": "버튼 자체 오류 상태 없음"
+            },
+            "focus-visible": {
+              "applicability": "not-applicable",
+              "reason": "로터리(CCP) 미지원"
+            },
+            "hover": {
+              "applicability": "not-applicable",
+              "reason": "차량 터치 화면에는 포인터 호버가 없음"
+            },
+            "loading": {
+              "applicability": "not-applicable",
+              "reason": "보조 동작은 즉시 반응"
+            },
+            "success": {
+              "applicability": "not-applicable",
+              "reason": "결과는 화면 전환으로 표현"
+            }
+          }
+        },
+        "semantics": "보조 동작 (수정, 5분만 더, 변경, 차박 종료)",
+        "states": [
+          "default",
+          "pressed",
+          "disabled"
+        ],
+        "token_refs": [
+          "radius.button",
+          "size.touch-min"
+        ]
+      },
+      {
+        "anatomy": [
+          "면 (surface)",
+          "1dp 테두리",
+          "제목",
+          "내용"
+        ],
+        "id": "card",
+        "interaction": {
+          "kind": "non-interactive",
+          "reason": "카드 자체는 누를 수 없고 안의 버튼만 동작"
+        },
+        "semantics": "정보 묶음 컨테이너",
+        "states": [
+          "default"
+        ],
+        "token_refs": [
+          "color.night.surface",
+          "color.night.border",
+          "radius.card",
+          "border.card",
+          "elevation.card"
+        ]
+      },
+      {
+        "anatomy": [
+          "큰 숫자",
+          "단위",
+          "라벨"
+        ],
+        "id": "stat",
+        "interaction": {
+          "kind": "non-interactive",
+          "reason": "읽기 전용 지표 (디버그 빌드의 시연용 길게 누르기는 제품 기능이 아님)"
+        },
+        "semantics": "배터리·온도·남은 시간 지표",
+        "states": [
+          "default"
+        ],
+        "token_refs": [
+          "color.night.text-primary",
+          "color.night.text-tertiary"
+        ]
+      }
+    ],
+    "rules": [
+      "주 동작 버튼은 화면당 하나, 나머지는 기본 버튼",
+      "눌림 상태는 면 명도만 바꾼다 (크기·그림자 변화 없음)"
+    ]
+  },
+  "content_locales": {
+    "locales": [
+      {
+        "locale": "ko",
+        "rules": [
+          "기본 언어"
+        ],
+        "status": "supported"
+      },
+      {
+        "locale": "en",
+        "rules": [
+          "values-en 문자열, 키와 포맷 인자는 한국어와 동일"
+        ],
+        "status": "supported"
+      }
+    ],
+    "voice": [
+      "기존 앱 문구처럼 짧은 해요체 (예: 20°C로 아침까지 따뜻하게 잘 수 있어요)",
+      "차가 한 일은 결과 중심으로 (성에 제거 마쳤어요)"
+    ]
+  },
+  "experience": {
+    "avoid": [
+      "Hyundai Sans 등 라이선스 없는 현대 전용 글꼴 사용 또는 그렇게 표기하기",
+      "카드마다 그림자·두꺼운 테두리를 겹쳐 쓰는 장식",
+      "밤 화면에서 순백(#FFFFFF) 넓은 면이나 채도 높은 배경",
+      "강조색을 여러 개 동시에 쓰는 무지개 상태 표시"
+    ],
+    "design_direction": [
+      "밤 화면(설정·계획·캠핑·수면)은 현대 네이비를 깊게 낮춘 다크 테마, 아침 기상 화면만 밝은 라이트 테마로 바꿔 시간의 흐름을 표현한다",
+      "현대(hyundai 레퍼런스)의 절제된 네이비·청록 톤과 그림자 없는 평면 구성을 분위기 근거로 삼는다",
+      "차량 화면 거리에서 읽히도록 숫자는 크게, 라벨은 작고 흐리게 — 정보 위계는 크기와 명도로만 만든다"
+    ],
+    "primary_tasks": [
+      "기상 시각·목적지·온도·여유 배터리·인원을 정하고 밤 계획 만들기",
+      "아침까지 남는 배터리와 집까지 필요한 배터리를 한눈에 확인하기",
+      "수면 중 어두운 화면에서 기상까지 남은 시간 확인하기",
+      "기상 후 밤새 기록을 보고 집으로 경로 안내 시작하기"
+    ],
+    "principles": [
+      "밤에 눈부시지 않게: 다크 배경 위 큰 흰 면이나 채도 높은 넓은 면을 쓰지 않는다",
+      "한 화면에 강조색 하나: 청록(시안)은 지금 누를 수 있는 핵심 동작과 진행 상태에만 쓴다",
+      "숫자가 주인공: 배터리 %, 시각, 남은 시간은 가장 큰 글자로, 단위와 라벨은 보조로",
+      "운전석에서 닿는 크기: 터치 대상은 최소 높이 88dp(1920 기준) 이상을 유지한다"
+    ],
+    "summary": "전기차 차박(차 안에서 하룻밤)을 위한 차량 인포테인먼트 앱. 잠들기 전 배터리·공조 계획을 세우고, 자는 동안 화면을 어둡게 유지하며, 아침에 차가 성에 제거·조명·환기로 깨운 뒤 집으로 출발시키는 하룻밤의 흐름을 담는다."
+  },
+  "foundations": {
+    "contrast_pairs": [
+      {
+        "background": "color.night.surface",
+        "foreground": "color.night.text-primary",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.night.surface",
+        "foreground": "color.night.text-tertiary",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.night.accent",
+        "foreground": "color.night.on-accent",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.night.surface",
+        "foreground": "color.night.accent-soft",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.morning.surface",
+        "foreground": "color.morning.text-primary",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.morning.surface",
+        "foreground": "color.morning.text-tertiary",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.morning.surface",
+        "foreground": "color.morning.accent-soft",
+        "minimum_ratio": 4.5
+      },
+      {
+        "background": "color.sleep.background",
+        "foreground": "color.sleep.text",
+        "minimum_ratio": 3
+      }
+    ],
+    "reduced_motion": true,
+    "rules": [
+      "색은 Android colors.xml 토큰 이름(background_primary, surface_basic, text_primary 등)을 유지하고 값만 바꾼다 — 밤 값은 values-night, 아침 값은 values",
+      "앱 기본은 밤 테마로 고정하고 기상 화면(WakeActivity)만 아침 테마로 연다",
+      "카드는 그림자 없이 1dp 테두리와 면 명도 차이로만 구분한다",
+      "강조색(accent)은 화면당 주 동작 하나에만 채운다. 나머지 버튼은 반투명 기본 버튼"
+    ],
+    "tokens": {
+      "border.card": {
+        "$description": "카드 테두리 두께",
+        "$type": "dimension",
+        "$value": "1dp"
+      },
+      "color.morning.accent": {
+        "$description": "아침 테마 핵심 버튼 (현대 네이비)",
+        "$type": "color",
+        "$value": "#002C5F"
+      },
+      "color.morning.accent-pressed": {
+        "$description": "아침 테마 핵심 버튼 눌림",
+        "$type": "color",
+        "$value": "#001F44"
+      },
+      "color.morning.accent-soft": {
+        "$description": "아침 테마 아이콘·진행 표시 강조 (청록)",
+        "$type": "color",
+        "$value": "#006B8F"
+      },
+      "color.morning.background": {
+        "$description": "아침(기상) 테마 앱 배경",
+        "$type": "color",
+        "$value": "#F4F6F9"
+      },
+      "color.morning.border": {
+        "$description": "아침 테마 카드 테두리",
+        "$type": "color",
+        "$value": "#DDE3EA"
+      },
+      "color.morning.negative": {
+        "$description": "아침 테마 경고",
+        "$type": "color",
+        "$value": "#C42E12"
+      },
+      "color.morning.positive": {
+        "$description": "아침 테마 정상·완료",
+        "$type": "color",
+        "$value": "#007A48"
+      },
+      "color.morning.surface": {
+        "$description": "아침 테마 카드 면",
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "color.morning.surface-high": {
+        "$description": "아침 테마 높은 면",
+        "$type": "color",
+        "$value": "#E9EDF2"
+      },
+      "color.morning.text-primary": {
+        "$description": "아침 테마 주 텍스트 (네이비 잉크)",
+        "$type": "color",
+        "$value": "#0A1B30"
+      },
+      "color.morning.text-tertiary": {
+        "$description": "아침 테마 라벨",
+        "$type": "color",
+        "$value": "#A30A1B30"
+      },
+      "color.morning.warm": {
+        "$description": "아침 테마 따뜻한 강조",
+        "$type": "color",
+        "$value": "#A85A00"
+      },
+      "color.night.accent": {
+        "$description": "밤 테마 핵심 동작 버튼 (현대 시안 계열)",
+        "$type": "color",
+        "$value": "#00AAD2"
+      },
+      "color.night.accent-pressed": {
+        "$description": "밤 테마 핵심 버튼 눌림",
+        "$type": "color",
+        "$value": "#0090B3"
+      },
+      "color.night.accent-soft": {
+        "$description": "밤 테마 아이콘·진행 표시 강조",
+        "$type": "color",
+        "$value": "#5CC8E8"
+      },
+      "color.night.background": {
+        "$description": "밤 테마 앱 배경 (깊은 네이비)",
+        "$type": "color",
+        "$value": "#0B1322"
+      },
+      "color.night.border": {
+        "$description": "밤 테마 카드 테두리",
+        "$type": "color",
+        "$value": "#22334D"
+      },
+      "color.night.info": {
+        "$description": "밤 테마 정보",
+        "$type": "color",
+        "$value": "#4DA3FF"
+      },
+      "color.night.negative": {
+        "$description": "밤 테마 경고·부족",
+        "$type": "color",
+        "$value": "#FF6A4D"
+      },
+      "color.night.on-accent": {
+        "$description": "시안 버튼 위 텍스트",
+        "$type": "color",
+        "$value": "#06121F"
+      },
+      "color.night.positive": {
+        "$description": "밤 테마 정상·완료",
+        "$type": "color",
+        "$value": "#2BD98A"
+      },
+      "color.night.surface": {
+        "$description": "밤 테마 카드 면",
+        "$type": "color",
+        "$value": "#121D30"
+      },
+      "color.night.surface-high": {
+        "$description": "밤 테마 높은 면 (아이콘 박스, 세그먼트 트랙)",
+        "$type": "color",
+        "$value": "#1B2940"
+      },
+      "color.night.text-primary": {
+        "$description": "밤 테마 주 텍스트",
+        "$type": "color",
+        "$value": "#F2F5F9"
+      },
+      "color.night.text-quaternary": {
+        "$description": "밤 테마 힌트 (42%, 큰 글자 전용)",
+        "$type": "color",
+        "$value": "#6BF2F5F9"
+      },
+      "color.night.text-secondary": {
+        "$description": "밤 테마 보조 텍스트 (85%)",
+        "$type": "color",
+        "$value": "#D9F2F5F9"
+      },
+      "color.night.text-tertiary": {
+        "$description": "밤 테마 라벨 (64%)",
+        "$type": "color",
+        "$value": "#A3F2F5F9"
+      },
+      "color.night.warm": {
+        "$description": "밤 테마 난방·일출 따뜻한 강조",
+        "$type": "color",
+        "$value": "#FFA233"
+      },
+      "color.sleep.background": {
+        "$description": "수면 중 화면 배경",
+        "$type": "color",
+        "$value": "#05080F"
+      },
+      "color.sleep.text": {
+        "$description": "수면 중 텍스트 (40%)",
+        "$type": "color",
+        "$value": "#66FFFFFF"
+      },
+      "elevation.card": {
+        "$description": "카드 그림자 없음 — 면 명도 차이로만 구분",
+        "$type": "dimension",
+        "$value": "0dp"
+      },
+      "radius.button": {
+        "$description": "버튼 모서리 (2560 기준)",
+        "$type": "dimension",
+        "$value": "14dp"
+      },
+      "radius.card": {
+        "$description": "카드 모서리 (2560 기준, 기존 32dp에서 절반으로 줄여 각진 인상)",
+        "$type": "dimension",
+        "$value": "16dp"
+      },
+      "radius.control": {
+        "$description": "아이콘 버튼·아이콘 박스 모서리 (2560 기준)",
+        "$type": "dimension",
+        "$value": "12dp"
+      },
+      "size.touch-min": {
+        "$description": "1920 기준 최소 터치 높이 (2560에서 비례 확대)",
+        "$type": "dimension",
+        "$value": "88dp"
+      }
+    }
+  },
+  "governance": {
+    "change_policy": [
+      "토큰 값 변경은 이 문서를 먼저 고친 뒤 colors.xml / dimens.xml에 반영한다",
+      "디자인 설정 파일은 Goodnight-Camp/.github 레포에만 두고 앱 레포에는 결과 리소스만 커밋한다"
+    ],
+    "decisions": [
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/experience/design_direction",
+        "source_class": "prompt-fact"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/foundations/tokens",
+        "source_class": "agent-proposed-greenfield-decision"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/typography_assets/roles",
+        "source_class": "repository-fact"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/typography_assets/rules",
+        "source_class": "agent-proposed-greenfield-decision"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/layout_platforms/rules",
+        "source_class": "repository-fact"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/content_locales/voice",
+        "source_class": "repository-fact"
+      },
+      {
+        "evidence": [
+          "design/evidence/2026-11-11-design-init.md"
+        ],
+        "path": "/components_states/components",
+        "source_class": "agent-proposed-greenfield-decision"
+      }
+    ],
+    "priority": [
+      "밤 화면 눈부심 최소화",
+      "차량 거리 가독성",
+      "레퍼런스 톤 일치"
+    ],
+    "unknown_policy": "absent-at-smallest-unresolved-boundary"
+  },
+  "identity": {
+    "kind": "project-system",
+    "name": "Goodnight Camp",
+    "scope": "굿나잇 캠프 Android Automotive 앱 (Pleos Connect 차량 디스플레이 2560×1440 가로, 터치) — 밤 계획·수면·기상 전 화면"
+  },
+  "layout_platforms": {
+    "minimum_width_px": 1920,
+    "platforms": [
+      {
+        "id": "android",
+        "rules": [
+          "Android Automotive (Pleos Connect), minSdk 28, targetSdk 34",
+          "AppCompat DayNight 테마로 밤/아침 팔레트 전환 — 앱 기본 MODE_NIGHT_YES, WakeActivity만 MODE_NIGHT_NO"
+        ]
+      }
+    ],
+    "rules": [
+      "가로 고정 레이아웃. 세로 회전 시 기존 경고 오버레이를 유지한다",
+      "치수는 values(1920 기준) · values-w2000dp · values-w2500dp 세 단계로 비례 확대한다",
+      "왼쪽은 핵심 지표·헤드라인, 오른쪽은 조작·목록의 2열 구성을 유지한다"
+    ]
+  },
+  "projection": {
+    "locale": "ko",
+    "path": "DESIGN.md",
+    "sha256": "8abc2afb846185baf23430b5d5ab226d70c6f595d0dedff30d59334d09cb91a4"
+  },
+  "schema_version": "2.0.0",
+  "typography_assets": {
+    "assets": [
+      {
+        "id": "asta-sans",
+        "kind": "font",
+        "license_status": "verified",
+        "notes": "SIL Open Font License 1.1 — 글꼴 파일 내장 라이선스 문구와 Google Fonts METADATA(license: OFL, designer: 42dot)로 확인. 현대차그룹 42dot 제작",
+        "source": "42dot Asta Sans (https://github.com/42dot/Asta-Sans, Google Fonts) — 레포 res/font/asta_sans_*.ttf",
+        "source_status": "official"
+      },
+      {
+        "id": "gc-icons",
+        "kind": "icon",
+        "license_status": "not-required",
+        "source": "goodnight-camp/automotive/src/main/res/drawable/gc_ic_*.xml",
+        "source_status": "project-owned"
+      }
+    ],
+    "roles": [
+      {
+        "family": "Asta Sans",
+        "id": "display-number",
+        "line_height": 1.1,
+        "size": "56sp (2560 기준)",
+        "usage": "배터리 %, 남은 시간 등 핵심 숫자",
+        "weight": 700
+      },
+      {
+        "family": "Asta Sans",
+        "id": "headline",
+        "line_height": 1.25,
+        "size": "52sp (2560 기준)",
+        "usage": "화면 헤드라인 (예: 20°C로 아침까지 따뜻하게 잘 수 있어요)",
+        "weight": 700
+      },
+      {
+        "family": "Asta Sans",
+        "id": "card-title",
+        "line_height": 1.3,
+        "size": "28sp (1920 기준)",
+        "usage": "카드 제목",
+        "weight": 700
+      },
+      {
+        "family": "Asta Sans",
+        "id": "body",
+        "line_height": 1.35,
+        "size": "26sp (1920 기준)",
+        "usage": "설정 값·행 텍스트",
+        "weight": 500
+      },
+      {
+        "family": "Asta Sans",
+        "id": "label",
+        "line_height": 1.35,
+        "size": "22sp (1920 기준)",
+        "usage": "지표 라벨·보조 설명",
+        "weight": 500
+      },
+      {
+        "family": "Asta Sans",
+        "id": "sleep-clock",
+        "line_height": 1,
+        "size": "165sp (1920 기준)",
+        "usage": "수면 중 큰 시계",
+        "weight": 300
+      }
+    ],
+    "rules": [
+      "글꼴은 레포의 Asta Sans(42dot, OFL 1.1)만 쓴다. 현대 전용 글꼴(Hyundai Sans)은 라이선스가 없어 쓰지 않는다",
+      "굵기는 700(제목·숫자)과 500(본문·라벨) 두 단계만 쓴다. 800은 쓰지 않는다 — 밤 화면에서 덜 공격적으로",
+      "수면 시계만 300(Light)"
+    ]
+  }
+}

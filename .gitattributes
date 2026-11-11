@@ -1,0 +1,2 @@
+# OmD 컴파일 패키지는 해시로 묶여 있어 줄바꿈이 바뀌면 안 됨
+design/core/** text eol=lf
