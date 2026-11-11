@@ -1,0 +1,56 @@
+{
+  "decisions": [
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/experience/design_direction",
+      "source_class": "prompt-fact"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/foundations/tokens",
+      "source_class": "agent-proposed-greenfield-decision"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/typography_assets/roles",
+      "source_class": "repository-fact"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/typography_assets/rules",
+      "source_class": "agent-proposed-greenfield-decision"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/layout_platforms/rules",
+      "source_class": "repository-fact"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/content_locales/voice",
+      "source_class": "repository-fact"
+    },
+    {
+      "evidence": [
+        "design/evidence/2026-11-11-design-init.md"
+      ],
+      "path": "/components_states/components",
+      "source_class": "agent-proposed-greenfield-decision"
+    }
+  ],
+  "design_md_sha256": "8abc2afb846185baf23430b5d5ab226d70c6f595d0dedff30d59334d09cb91a4",
+  "graph_sha256": "1ae1fab83fa03a399080347e44db8d6fb857bf934e6af39e944c0a148ea1489e",
+  "schema_version": "2.0.0"
+}

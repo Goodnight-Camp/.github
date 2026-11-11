@@ -1,0 +1,28 @@
+{
+  "authority_transition_approved": true,
+  "candidate": {
+    "design_md_sha256": "8abc2afb846185baf23430b5d5ab226d70c6f595d0dedff30d59334d09cb91a4",
+    "exact_preview_reviewed": true,
+    "normalized_graph_sha256": "64e2082429831b0df48867ebc234e6eb9c552e46d04b5d9ac91b1075fa997ef4"
+  },
+  "decision": "approved",
+  "inputs": {
+    "candidate_design_md_sha256": "8abc2afb846185baf23430b5d5ab226d70c6f595d0dedff30d59334d09cb91a4",
+    "coverage_sha256": "60412d637e0a476b6ec7ac6b82118a8e6228d30562935e90c47eb12b2b830456",
+    "graph_sha256": "edd7848ed8326a709fb455a4831acfdf2c81d675cd52c83533b1fc01a9911ab3",
+    "normalized_candidate_graph_sha256": "64e2082429831b0df48867ebc234e6eb9c552e46d04b5d9ac91b1075fa997ef4",
+    "provenance_sha256": "fbf4654085ef2ecc875a84c42aae77d39e55e9fccb3db0dd2eb53641cd6a773c",
+    "review_request_sha256": "4c629da87b3f1052a57dee3b7ba7eba0f405602eee341b6b5e7674d0691f6197"
+  },
+  "kind": "design-md-core-adoption-review",
+  "review_request": {
+    "path": "review-request.json",
+    "sha256": "4c629da87b3f1052a57dee3b7ba7eba0f405602eee341b6b5e7674d0691f6197",
+    "status_reviewed": "review-required"
+  },
+  "reviewer": {
+    "identifier": "YBSeok",
+    "role": "project-owner"
+  },
+  "schema_version": "2.0.0"
+}
